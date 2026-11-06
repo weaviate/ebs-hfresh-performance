@@ -1,0 +1,1 @@
+phase=phase-2-max randread_4k_iops=81389 randread_4k_mean_lat_us=3110 seqread_1m_mib_s=2100

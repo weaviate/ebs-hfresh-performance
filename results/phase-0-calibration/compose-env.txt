@@ -1,0 +1,4 @@
+# Import phase: relaxed RAM so compaction and HFresh splits cannot OOM.
+# On-disk bytes are identical regardless of how fast they were written.
+MEM_LIMIT=32g
+GOMEMLIMIT=24GiB

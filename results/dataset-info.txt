@@ -1,0 +1,5 @@
+attrs: {}
+neighbors (10000, 100) int64
+test (10000, 768) float32
+train (9990000, 768) float32
+train norms: min 13.7347 mean 14.4107 max 15.6112 (1.0 = unit vectors, cosine == dot)

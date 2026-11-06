@@ -1,0 +1,1 @@
+container mem_limit=32.0GiB memswap=32.0GiB cpus=24

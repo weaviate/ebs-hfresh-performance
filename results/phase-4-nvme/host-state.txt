@@ -1,0 +1,13 @@
+date: 2026-09-09T12:33:37Z
+instance: i4i.8xlarge
+kernel: 6.18.44-99.149.amzn2023.x86_64
+data_dev: nvme1n1
+read_ahead_kb: 16
+scheduler: [none] mq-deadline kyber bfq 
+nr_requests: 127
+mount: /dev/nvme1n1 ext4   rw,noatime,nodiratime,seclabel
+swap: 
+cgroup: cgroup2fs controllers=[cpuset cpu io memory hugetlb pids misc]
+docker: 25.0.16 compose=2.29.7
+mem_total_kb: 259758620
+data_disk: nvme model=Amazon EC2 NVMe Instance Storage size= 3.4T

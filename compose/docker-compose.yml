@@ -1,0 +1,34 @@
+# Headline configuration: Weaviate with HFresh, hard-capped at 8 GiB (page cache included).
+# Run from /opt/ebs-blog/compose on the server:  docker compose up -d
+services:
+  weaviate:
+    image: cr.weaviate.io/semitechnologies/weaviate:${WEAVIATE_VERSION:-1.39.3}
+    command: ["--host", "0.0.0.0", "--port", "8080", "--scheme", "http"]
+    restart: "no"
+    ports:
+      - "8080:8080"
+      - "50051:50051"
+      - "2112:2112"
+      - "6060:6060"
+    volumes:
+      - /data/weaviate:/var/lib/weaviate
+    # cgroup v2 hard cap. memswap == mem means no swap. Page cache attributable to
+    # the container counts against this, which is what makes the test disk-bound.
+    mem_limit: ${MEM_LIMIT:-8g}
+    memswap_limit: ${MEM_LIMIT:-8g}
+    cpus: 24
+    environment:
+      PERSISTENCE_DATA_PATH: /var/lib/weaviate
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: "true"
+      DEFAULT_VECTOR_INDEX: hfresh
+      ASYNC_INDEXING: "true"
+      GOMEMLIMIT: ${GOMEMLIMIT:-5GiB}
+      GOMAXPROCS: "24"
+      LIMIT_RESOURCES: "false"
+      PERSISTENCE_LSM_ACCESS_STRATEGY: ${LSM_ACCESS:-mmap}
+      PROMETHEUS_MONITORING_ENABLED: "true"
+      DEBUG_ENDPOINTS_ENABLED: "true"
+      DISABLE_TELEMETRY: "true"
+      CLUSTER_HOSTNAME: node1
+      LOG_LEVEL: info
+      QUERY_DEFAULTS_LIMIT: "10"

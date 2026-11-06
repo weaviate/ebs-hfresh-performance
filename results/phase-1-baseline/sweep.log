@@ -1,0 +1,16 @@
+sweep phase-1-baseline ebs=3000-125 started 2026-09-08T20:46:17Z
+20:46:18 run warmup: --rescoreLimit 350 --efArray 64 -p 32 --queryDuration 60 --labels phase=phase-1-baseline,ebs=3000-125,kind=warmup
+time="2026-09-08T20:46:18Z" level=info msg="Benchmark configuration" dataset=/datasets/sphere-10M-meta-dpr.hdf5 distance=cosine efC=256 index=hfresh m=16 shards=1
+time="2026-09-08T21:03:58Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=3.361365907s ndcg=0.6781524725646837 parallel=32 qps=9.435682407996499 recall=0.5117299999999968 searchProbe=64
+21:03:58 run probe-sweep-p32: --rescoreLimit 350 --efArray 64,256 -p 32 --queryDuration 60 --labels phase=phase-1-baseline,ebs=3000-125,kind=probe,parallel=32
+time="2026-09-08T21:03:59Z" level=info msg="Benchmark configuration" dataset=/datasets/sphere-10M-meta-dpr.hdf5 distance=cosine efC=256 index=hfresh m=16 shards=1
+time="2026-09-08T21:21:02Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=3.248232716s ndcg=0.6781524725646837 parallel=32 qps=9.772042902002905 recall=0.5117299999999967 searchProbe=64
+time="2026-09-08T21:41:43Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=3.926896347s ndcg=0.7123609131553927 parallel=32 qps=8.060394080466814 recall=0.5485399999999973 searchProbe=256
+21:41:44 run probe-sweep-p128: --rescoreLimit 350 --efArray 64,256 -p 128 --queryDuration 60 --labels phase=phase-1-baseline,ebs=3000-125,kind=probe,parallel=128
+time="2026-09-08T21:41:44Z" level=info msg="Benchmark configuration" dataset=/datasets/sphere-10M-meta-dpr.hdf5 distance=cosine efC=256 index=hfresh m=16 shards=1
+time="2026-09-08T21:42:14Z" level=fatal msg="Could not search with grpc: rpc error: code = DeadlineExceeded desc = context deadline exceeded"
+WARNING: no new result file for probe-sweep-p128
+rescoreLimit now 100
+21:42:15 run rescore-r100-p32: --efArray 64 -p 32 --queryDuration 60 --labels phase=phase-1-baseline,ebs=3000-125,kind=rescore,parallel=32,rescore=100
+time="2026-09-08T21:42:15Z" level=info msg="Benchmark configuration" dataset=/datasets/sphere-10M-meta-dpr.hdf5 distance=cosine efC=256 index=hfresh m=16 shards=1
+time="2026-09-08T21:47:56Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=1.076146851s ndcg=0.6710503048367352 parallel=32 qps=29.337931434304256 recall=0.5012499999999961 searchProbe=64
