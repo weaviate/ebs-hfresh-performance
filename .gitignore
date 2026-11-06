@@ -3,7 +3,6 @@ infra/.terraform/
 infra/terraform.tfstate
 infra/terraform.tfstate.backup
 infra/*.tfvars
-!infra/terraform.tfvars.example
 
 # Local credentials and tooling
 *.pem

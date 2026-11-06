@@ -34,12 +34,20 @@ resource "aws_vpc" "main" {
   tags                 = { Name = var.project }
 }
 
+# Public subnet holds only the NAT gateway and the Instance Connect Endpoint.
 resource "aws_subnet" "public" {
-  vpc_id                  = aws_vpc.main.id
-  cidr_block              = "10.0.1.0/24"
-  availability_zone       = var.availability_zone
-  map_public_ip_on_launch = true
-  tags                    = { Name = "${var.project}-public" }
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "10.0.1.0/24"
+  availability_zone = var.availability_zone
+  tags              = { Name = "${var.project}-public" }
+}
+
+# Both instances live here: no public IPv4, egress through the NAT gateway.
+resource "aws_subnet" "private" {
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "10.0.2.0/24"
+  availability_zone = var.availability_zone
+  tags              = { Name = "${var.project}-private" }
 }
 
 resource "aws_internet_gateway" "igw" {
@@ -59,7 +67,40 @@ resource "aws_route_table_association" "public" {
   route_table_id = aws_route_table.public.id
 }
 
-# No ingress anywhere except server <- client. Shell access is SSM only.
+resource "aws_eip" "nat" {
+  domain = "vpc"
+  tags   = { Name = "${var.project}-nat" }
+}
+
+resource "aws_nat_gateway" "nat" {
+  allocation_id = aws_eip.nat.id
+  subnet_id     = aws_subnet.public.id
+  tags          = { Name = "${var.project}-nat" }
+  depends_on    = [aws_internet_gateway.igw]
+}
+
+resource "aws_route_table" "private" {
+  vpc_id = aws_vpc.main.id
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.nat.id
+  }
+}
+
+resource "aws_route_table_association" "private" {
+  subnet_id      = aws_subnet.private.id
+  route_table_id = aws_route_table.private.id
+}
+
+# S3 traffic (results bucket, bundle sync) bypasses the NAT gateway: free and faster.
+resource "aws_vpc_endpoint" "s3" {
+  vpc_id            = aws_vpc.main.id
+  service_name      = "com.amazonaws.${var.region}.s3"
+  vpc_endpoint_type = "Gateway"
+  route_table_ids   = [aws_route_table.private.id]
+}
+
+# No ingress from outside the VPC. Shell access goes through the Instance Connect Endpoint only.
 resource "aws_security_group" "client" {
   name   = "${var.project}-client"
   vpc_id = aws_vpc.main.id
@@ -83,23 +124,12 @@ resource "aws_security_group" "server" {
 }
 
 resource "aws_vpc_security_group_ingress_rule" "server_from_client" {
-  for_each          = toset(["8080", "50051", "2112", "6060"])
-  security_group_id = aws_security_group.server.id
-  ip_protocol       = "tcp"
-  from_port         = tonumber(each.value)
-  to_port           = tonumber(each.value)
+  for_each                     = toset(["8080", "50051", "2112", "6060"])
+  security_group_id            = aws_security_group.server.id
+  ip_protocol                  = "tcp"
+  from_port                    = tonumber(each.value)
+  to_port                      = tonumber(each.value)
   referenced_security_group_id = aws_security_group.client.id
-}
-
-# Operator SSH from one IP (EC2 Instance Connect pushes a 60 s key; no key pair baked in).
-resource "aws_vpc_security_group_ingress_rule" "admin_ssh" {
-  for_each = { for pair in setproduct(["server", "client"], var.admin_cidrs) : "${pair[0]}-${pair[1]}" => {
-    sg = pair[0] == "server" ? aws_security_group.server.id : aws_security_group.client.id, cidr = pair[1] } }
-  security_group_id = each.value.sg
-  ip_protocol       = "tcp"
-  from_port         = 22
-  to_port           = 22
-  cidr_ipv4         = each.value.cidr
 }
 
 # EC2 Instance Connect Endpoint: SSH tunnelled over the AWS API (HTTPS), no public ingress needed.
@@ -221,13 +251,14 @@ resource "aws_ebs_volume" "data" {
 # ---------------------------------------------------------------- server
 
 resource "aws_instance" "server" {
-  ami                    = data.aws_ssm_parameter.al2023.value
-  instance_type          = var.server_instance_type
-  subnet_id              = aws_subnet.public.id
-  availability_zone      = var.availability_zone
-  vpc_security_group_ids = [aws_security_group.server.id]
-  iam_instance_profile   = aws_iam_instance_profile.instance.name
-  ebs_optimized          = true
+  ami                         = data.aws_ssm_parameter.al2023.value
+  instance_type               = var.server_instance_type
+  subnet_id                   = aws_subnet.private.id
+  associate_public_ip_address = false
+  availability_zone           = var.availability_zone
+  vpc_security_group_ids      = [aws_security_group.server.id]
+  iam_instance_profile        = aws_iam_instance_profile.instance.name
+  ebs_optimized               = true
 
   root_block_device {
     volume_type = "gp3"
@@ -259,12 +290,13 @@ resource "aws_volume_attachment" "data" {
 # ---------------------------------------------------------------- client
 
 resource "aws_instance" "client" {
-  ami                    = data.aws_ssm_parameter.al2023.value
-  instance_type          = var.client_instance_type
-  subnet_id              = aws_subnet.public.id
-  availability_zone      = var.availability_zone
-  vpc_security_group_ids = [aws_security_group.client.id]
-  iam_instance_profile   = aws_iam_instance_profile.instance.name
+  ami                         = data.aws_ssm_parameter.al2023.value
+  instance_type               = var.client_instance_type
+  subnet_id                   = aws_subnet.private.id
+  associate_public_ip_address = false
+  availability_zone           = var.availability_zone
+  vpc_security_group_ids      = [aws_security_group.client.id]
+  iam_instance_profile        = aws_iam_instance_profile.instance.name
 
   root_block_device {
     volume_type = "gp3"

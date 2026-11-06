@@ -22,14 +22,6 @@ output "region" {
   value = var.region
 }
 
-output "server_public_ip" {
-  value = aws_instance.server.public_ip
-}
-
-output "client_public_ip" {
-  value = aws_instance.client.public_ip
-}
-
 output "eice_id" {
   value = aws_ec2_instance_connect_endpoint.eice.id
 }

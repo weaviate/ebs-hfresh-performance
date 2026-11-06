@@ -1,2 +1,0 @@
-# Optional: your public IP(s) for direct SSH. The EC2 Instance Connect Endpoint path works without this.
-admin_cidrs = []

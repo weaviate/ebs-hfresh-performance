@@ -34,9 +34,12 @@ Measured at 32 concurrent clients and `searchProbe` 64. Full tables are in
   inside Docker (commit in `results/benchmarker-commit.txt`).
 - **Dataset**: `sphere-10M-meta-dpr` (10M x 768-d, 31 GB HDF5, public, URL in
   `infra/variables.tf`).
-- **Access**: no public ingress and no stored key pair. Shell access goes through an EC2
-  Instance Connect Endpoint (`scripts/aws/ssm.sh`). An S3 bucket ferries scripts out and
-  results back.
+- **Network**: both instances sit in a private subnet with no public IPv4 address.
+  Outbound traffic (package installs, image pull, the dataset download) leaves through a
+  NAT gateway; S3 traffic uses a gateway endpoint. Shell access goes through an EC2
+  Instance Connect Endpoint (`scripts/aws/ssm.sh`) with a throw-away key, so there is no
+  inbound path from the internet and no stored key pair. An S3 bucket ferries scripts out
+  and results back.
 - **Safety**: a server-side dead-man's switch (`scripts/server/deadman.sh`) stops
   Weaviate, syncs results and powers the instance off after a timer, so a dropped
   session cannot leave the rig running.
@@ -50,7 +53,9 @@ the server, warm up, then sweep clients 8/32/128 x `searchProbe` 32/64/128/256, 
 
 Expect roughly 6 to 8 hours of wall clock and around $35 to $50 of AWS spend for the
 EBS phases. The baseline phase is slow by construction (10k queries at ~9 QPS per data
-point).
+point). The NAT gateway adds a few dollars: an hourly charge plus per-GB processing for
+the 31 GB dataset download. The original run placed the instances in a public subnet;
+the move to a private subnet changes nothing about the storage path being measured.
 
 Prerequisites on the operator machine: Terraform >= 1.5, AWS CLI v2, `jq`, `ssh`,
 Python 3 with `pip install -r scripts/analyze/requirements.txt`.
@@ -66,8 +71,7 @@ Python 3 with `pip install -r scripts/analyze/requirements.txt`.
      --filters Name=instance-type,Values=c6in.8xlarge --region us-east-2
    ```
    and set `availability_zone` in `infra/variables.tf` (or pass `-var`).
-3. **Build the rig.** Optionally copy `infra/terraform.tfvars.example` to
-   `infra/terraform.tfvars` and add your IP; the Instance Connect path works without it.
+3. **Build the rig.**
    ```
    cd infra && terraform init && terraform apply
    scripts/aws/modify-volume.sh 80000 2000      # provider caps throughput at 1000 on create

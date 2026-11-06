@@ -52,12 +52,6 @@ variable "weaviate_version" {
   default = "1.39.3"
 }
 
-variable "admin_cidrs" {
-  description = "Operator public IPs (/32) allowed to SSH directly. Empty list disables the rules; the EICE path works regardless."
-  type        = list(string)
-  default     = []
-}
-
 variable "data_disk" {
   description = "Where Weaviate's data lives: \"ebs\" creates and attaches the gp3 volume; \"nvme\" uses the instance-store NVMe (i4i, c6id, ...) and creates no volume."
   type        = string
