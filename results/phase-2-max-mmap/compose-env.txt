@@ -1,0 +1,3 @@
+# Phases 1 and 2: the 8 GiB cap. ~3 GiB of it is left for page cache and non-Go memory.
+MEM_LIMIT=8g
+GOMEMLIMIT=5GiB

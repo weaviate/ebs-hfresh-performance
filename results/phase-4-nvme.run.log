@@ -1,0 +1,81 @@
+== [phase-4-nvme] arm dead-man's switch (100 min)
+Running timer as unit: ebs-blog-deadman.timer
+Will run service as unit: ebs-blog-deadman.service
+deadman armed: poweroff at 14:11 UTC (100 min)
+== [phase-4-nvme] reset server (headline-pread.env)
+phase=phase-4-nvme randread_4k_iops=349620 randread_4k_mean_lat_us=730 seqread_1m_mib_s=2817
+date: 2026-09-09T12:33:37Z
+instance: i4i.8xlarge
+kernel: 6.18.44-99.149.amzn2023.x86_64
+data_dev: nvme1n1
+read_ahead_kb: 16
+scheduler: [none] mq-deadline kyber bfq 
+nr_requests: 127
+mount: /dev/nvme1n1 ext4   rw,noatime,nodiratime,seclabel
+swap: 
+cgroup: cgroup2fs controllers=[cpuset cpu io memory hugetlb pids misc]
+docker: 25.0.16 compose=2.29.7
+mem_total_kb: 259758620
+data_disk: nvme model=Amazon EC2 NVMe Instance Storage size= 3.4T
+ Network compose_default  Creating
+ Network compose_default  Created
+ Container compose-weaviate-1  Creating
+ Container compose-weaviate-1  Created
+ Container compose-weaviate-1  Starting
+ Container compose-weaviate-1  Started
+container mem_limit=8.0GiB memswap=8.0GiB cpus=24
+{"version":"1.39.3","hostname":"http://[::]:8080"}
+39G	/data/weaviate
+reset done for phase-4-nvme; run a 60 s warm-up from the client before measuring
+== [phase-4-nvme] start host capture
+capture started: /data/results/phase-4-nvme/sweep
+== [phase-4-nvme] sweep from client (detached; the tunnel is not held open)
+launched
+12:35 [phase-4-nvme] 
+12:36 [phase-4-nvme] last: p=32 qps=540.6418565485374
+12:37 [phase-4-nvme] last: p=32 qps=540.6418565485374
+12:38 [phase-4-nvme] last: p=8 qps=436.02534136136467
+12:39 [phase-4-nvme] last: p=8 qps=436.02534136136467
+12:40 [phase-4-nvme] last: p=8 qps=361.77965188091844
+12:41 [phase-4-nvme] last: p=8 qps=361.77965188091844
+12:42 [phase-4-nvme] last: p=8 qps=273.3128303579217
+12:43 [phase-4-nvme] poll failed
+12:44 [phase-4-nvme] poll failed
+12:45 [phase-4-nvme] poll failed
+12:46 [phase-4-nvme] poll failed
+12:47 [phase-4-nvme] poll failed
+12:48 [phase-4-nvme] poll failed
+12:50 [phase-4-nvme] poll failed
+12:51 [phase-4-nvme] poll failed
+12:52 [phase-4-nvme] poll failed
+12:53 [phase-4-nvme] poll failed
+12:54 [phase-4-nvme] poll failed
+12:55 [phase-4-nvme] poll failed
+12:56 [phase-4-nvme] poll failed
+12:57 [phase-4-nvme] poll failed
+12:58 [phase-4-nvme] poll failed
+12:59 [phase-4-nvme] poll failed
+13:00 [phase-4-nvme] poll failed
+13:01 [phase-4-nvme] poll failed
+13:02 [phase-4-nvme] poll failed
+13:03 [phase-4-nvme] poll failed
+13:04 [phase-4-nvme] last: p=32 qps=1036.6361344446432
+13:05 [phase-4-nvme] last: p=32 qps=1036.6361344446432
+13:06 [phase-4-nvme] last: p=32 qps=558.7689677815385
+13:07 [phase-4-nvme] last: p=32 qps=558.7689677815385
+13:08 [phase-4-nvme] DONE
+== [phase-4-nvme] stop capture, sync server results
+capture stopped: /data/results/phase-4-nvme/sweep
+synced
+== [phase-4-nvme] cloudwatch export 2026-09-09T12:34:00Z .. 2026-09-09T13:08:50Z
+
+aws: [ERROR]: Provided region_name '[33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mNo outputs found[0m
+[33m│[0m [0m
+[33m│[0m [0m[0mThe state file either has no outputs defined, or all the defined outputs
+[33m│[0m [0mare empty. Please define an output in your configuration with the `output`
+[33m│[0m [0mkeyword and run `terraform refresh` for it to become available. If you are
+[33m│[0m [0musing interpolation, please verify the interpolated value is not empty. You
+[33m│[0m [0mcan use the `terraform console` command to assist.
+[33m╵[0m[0m' doesn't match a supported format.
+cloudwatch export failed (non-fatal)

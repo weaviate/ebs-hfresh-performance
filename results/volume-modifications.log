@@ -1,0 +1,6 @@
+2026-09-08T11:18:02Z request iops=80000 throughput=2000 vol=vol-05af8a65275f99a3a
+modifying	80000	80000	1000	2000
+2026-09-08T11:18:27Z completed iops=80000 throughput=2000
+2026-09-08T16:05:23Z request iops=3000 throughput=125 vol=vol-05af8a65275f99a3a
+modifying	80000	3000	2000	125
+2026-09-08T17:23:22Z NOTE phase-1 started while modification state=optimizing (36%); fio measured 3099 IOPS / 81 ms at qd256, i.e. target performance already applied

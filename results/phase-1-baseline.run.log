@@ -1,0 +1,284 @@
+2026-09-08T16:05:23Z request iops=3000 throughput=125 vol=vol-05af8a65275f99a3a
+modifying	80000	3000	2000	125
+16:05:26 state=modifying progress=0% elapsed=1s
+16:05:47 state=optimizing progress=0% elapsed=22s
+16:06:08 state=optimizing progress=0% elapsed=43s
+16:06:29 state=optimizing progress=0% elapsed=64s
+16:06:50 state=optimizing progress=0% elapsed=85s
+16:07:11 state=optimizing progress=0% elapsed=106s
+16:07:32 state=optimizing progress=0% elapsed=127s
+16:07:53 state=optimizing progress=0% elapsed=148s
+16:08:14 state=optimizing progress=0% elapsed=169s
+16:08:35 state=optimizing progress=0% elapsed=190s
+16:08:56 state=optimizing progress=0% elapsed=211s
+16:09:17 state=optimizing progress=0% elapsed=232s
+16:09:38 state=optimizing progress=0% elapsed=253s
+16:09:59 state=optimizing progress=0% elapsed=274s
+16:10:20 state=optimizing progress=0% elapsed=295s
+16:10:41 state=optimizing progress=2% elapsed=316s
+16:11:02 state=optimizing progress=2% elapsed=337s
+16:11:23 state=optimizing progress=2% elapsed=358s
+16:11:44 state=optimizing progress=2% elapsed=379s
+16:12:05 state=optimizing progress=2% elapsed=400s
+16:12:26 state=optimizing progress=2% elapsed=421s
+16:12:47 state=optimizing progress=2% elapsed=442s
+16:13:08 state=optimizing progress=2% elapsed=463s
+16:13:29 state=optimizing progress=2% elapsed=484s
+16:13:50 state=optimizing progress=2% elapsed=505s
+16:14:11 state=optimizing progress=2% elapsed=526s
+16:14:32 state=optimizing progress=2% elapsed=547s
+16:14:53 state=optimizing progress=2% elapsed=568s
+16:15:13 state=optimizing progress=2% elapsed=588s
+16:15:34 state=optimizing progress=5% elapsed=609s
+16:15:55 state=optimizing progress=5% elapsed=630s
+16:16:16 state=optimizing progress=5% elapsed=651s
+16:16:37 state=optimizing progress=5% elapsed=672s
+16:16:58 state=optimizing progress=5% elapsed=693s
+16:17:19 state=optimizing progress=5% elapsed=714s
+16:17:40 state=optimizing progress=5% elapsed=735s
+16:18:01 state=optimizing progress=5% elapsed=756s
+16:18:22 state=optimizing progress=5% elapsed=777s
+16:18:43 state=optimizing progress=5% elapsed=798s
+16:19:04 state=optimizing progress=5% elapsed=819s
+16:19:25 state=optimizing progress=5% elapsed=840s
+16:19:46 state=optimizing progress=5% elapsed=861s
+16:20:07 state=optimizing progress=5% elapsed=882s
+16:20:28 state=optimizing progress=5% elapsed=903s
+16:20:49 state=optimizing progress=7% elapsed=924s
+16:21:09 state=optimizing progress=7% elapsed=944s
+16:21:30 state=optimizing progress=7% elapsed=965s
+16:21:51 state=optimizing progress=7% elapsed=986s
+16:22:12 state=optimizing progress=7% elapsed=1007s
+16:22:33 state=optimizing progress=7% elapsed=1028s
+16:22:54 state=optimizing progress=7% elapsed=1049s
+16:23:15 state=optimizing progress=7% elapsed=1070s
+16:23:37 state=optimizing progress=7% elapsed=1092s
+16:23:58 state=optimizing progress=7% elapsed=1113s
+16:24:19 state=optimizing progress=7% elapsed=1134s
+16:24:40 state=optimizing progress=7% elapsed=1155s
+16:25:00 state=optimizing progress=7% elapsed=1175s
+16:25:21 state=optimizing progress=7% elapsed=1196s
+16:25:42 state=optimizing progress=7% elapsed=1217s
+16:26:03 state=optimizing progress=10% elapsed=1238s
+16:26:24 state=optimizing progress=10% elapsed=1259s
+16:26:45 state=optimizing progress=10% elapsed=1280s
+16:27:06 state=optimizing progress=10% elapsed=1301s
+16:27:27 state=optimizing progress=10% elapsed=1322s
+16:27:48 state=optimizing progress=10% elapsed=1343s
+16:28:09 state=optimizing progress=10% elapsed=1364s
+16:28:30 state=optimizing progress=10% elapsed=1385s
+16:28:51 state=optimizing progress=10% elapsed=1406s
+16:29:12 state=optimizing progress=10% elapsed=1427s
+16:29:32 state=optimizing progress=10% elapsed=1447s
+16:29:53 state=optimizing progress=10% elapsed=1468s
+16:30:14 state=optimizing progress=10% elapsed=1489s
+16:30:35 state=optimizing progress=10% elapsed=1510s
+16:30:56 state=optimizing progress=13% elapsed=1531s
+16:31:17 state=optimizing progress=13% elapsed=1552s
+16:31:38 state=optimizing progress=13% elapsed=1573s
+16:31:59 state=optimizing progress=13% elapsed=1594s
+16:32:20 state=optimizing progress=13% elapsed=1615s
+16:32:41 state=optimizing progress=13% elapsed=1636s
+16:33:02 state=optimizing progress=13% elapsed=1657s
+16:33:23 state=optimizing progress=13% elapsed=1678s
+16:33:44 state=optimizing progress=13% elapsed=1699s
+16:34:05 state=optimizing progress=13% elapsed=1720s
+16:34:26 state=optimizing progress=13% elapsed=1741s
+16:34:47 state=optimizing progress=13% elapsed=1762s
+16:35:08 state=optimizing progress=13% elapsed=1783s
+16:35:28 state=optimizing progress=13% elapsed=1803s
+16:35:49 state=optimizing progress=15% elapsed=1824s
+16:36:10 state=optimizing progress=15% elapsed=1845s
+16:36:31 state=optimizing progress=15% elapsed=1866s
+16:36:52 state=optimizing progress=15% elapsed=1887s
+16:37:13 state=optimizing progress=15% elapsed=1908s
+16:37:34 state=optimizing progress=15% elapsed=1929s
+16:37:55 state=optimizing progress=15% elapsed=1950s
+16:38:16 state=optimizing progress=15% elapsed=1971s
+16:38:37 state=optimizing progress=15% elapsed=1992s
+16:38:58 state=optimizing progress=15% elapsed=2013s
+16:39:19 state=optimizing progress=15% elapsed=2034s
+16:39:40 state=optimizing progress=15% elapsed=2055s
+16:40:01 state=optimizing progress=15% elapsed=2076s
+16:40:22 state=optimizing progress=15% elapsed=2097s
+16:40:43 state=optimizing progress=15% elapsed=2118s
+16:41:03 state=optimizing progress=18% elapsed=2139s
+16:41:24 state=optimizing progress=18% elapsed=2159s
+16:41:45 state=optimizing progress=18% elapsed=2180s
+16:42:06 state=optimizing progress=18% elapsed=2201s
+16:42:27 state=optimizing progress=18% elapsed=2222s
+16:42:48 state=optimizing progress=18% elapsed=2243s
+16:43:09 state=optimizing progress=18% elapsed=2264s
+16:43:30 state=optimizing progress=18% elapsed=2285s
+16:43:51 state=optimizing progress=18% elapsed=2306s
+16:44:12 state=optimizing progress=18% elapsed=2327s
+16:44:33 state=optimizing progress=18% elapsed=2348s
+16:44:54 state=optimizing progress=18% elapsed=2369s
+16:45:15 state=optimizing progress=18% elapsed=2390s
+16:45:36 state=optimizing progress=18% elapsed=2411s
+16:45:57 state=optimizing progress=20% elapsed=2432s
+16:46:18 state=optimizing progress=20% elapsed=2453s
+16:46:39 state=optimizing progress=20% elapsed=2474s
+16:47:00 state=optimizing progress=20% elapsed=2495s
+16:47:20 state=optimizing progress=20% elapsed=2515s
+16:47:41 state=optimizing progress=20% elapsed=2536s
+16:48:02 state=optimizing progress=20% elapsed=2557s
+16:48:23 state=optimizing progress=20% elapsed=2578s
+16:48:44 state=optimizing progress=20% elapsed=2599s
+16:49:05 state=optimizing progress=20% elapsed=2620s
+16:49:26 state=optimizing progress=20% elapsed=2641s
+16:49:47 state=optimizing progress=20% elapsed=2662s
+16:50:08 state=optimizing progress=20% elapsed=2683s
+16:50:29 state=optimizing progress=20% elapsed=2704s
+16:50:50 state=optimizing progress=20% elapsed=2725s
+16:51:11 state=optimizing progress=23% elapsed=2746s
+16:51:32 state=optimizing progress=23% elapsed=2767s
+16:51:52 state=optimizing progress=23% elapsed=2787s
+16:52:13 state=optimizing progress=23% elapsed=2808s
+16:52:34 state=optimizing progress=23% elapsed=2829s
+16:52:55 state=optimizing progress=23% elapsed=2850s
+16:53:16 state=optimizing progress=23% elapsed=2871s
+16:53:37 state=optimizing progress=23% elapsed=2892s
+16:53:58 state=optimizing progress=23% elapsed=2913s
+16:54:19 state=optimizing progress=23% elapsed=2934s
+16:54:40 state=optimizing progress=23% elapsed=2955s
+16:55:01 state=optimizing progress=23% elapsed=2976s
+16:55:22 state=optimizing progress=23% elapsed=2997s
+16:55:43 state=optimizing progress=23% elapsed=3018s
+16:56:04 state=optimizing progress=26% elapsed=3039s
+16:56:25 state=optimizing progress=26% elapsed=3060s
+16:56:46 state=optimizing progress=26% elapsed=3081s
+16:57:07 state=optimizing progress=26% elapsed=3102s
+16:57:28 state=optimizing progress=26% elapsed=3123s
+16:57:49 state=optimizing progress=26% elapsed=3144s
+16:58:10 state=optimizing progress=26% elapsed=3165s
+16:58:31 state=optimizing progress=26% elapsed=3186s
+16:58:52 state=optimizing progress=26% elapsed=3207s
+16:59:13 state=optimizing progress=26% elapsed=3228s
+16:59:34 state=optimizing progress=26% elapsed=3249s
+16:59:55 state=optimizing progress=26% elapsed=3270s
+17:00:16 state=optimizing progress=26% elapsed=3291s
+17:00:37 state=optimizing progress=26% elapsed=3312s
+17:00:58 state=optimizing progress=26% elapsed=3333s
+17:01:18 state=optimizing progress=28% elapsed=3353s
+17:01:39 state=optimizing progress=28% elapsed=3374s
+17:02:00 state=optimizing progress=28% elapsed=3395s
+17:02:21 state=optimizing progress=28% elapsed=3416s
+17:02:42 state=optimizing progress=28% elapsed=3437s
+17:03:03 state=optimizing progress=28% elapsed=3458s
+17:03:24 state=optimizing progress=28% elapsed=3479s
+17:03:45 state=optimizing progress=28% elapsed=3500s
+17:04:06 state=optimizing progress=28% elapsed=3521s
+17:04:27 state=optimizing progress=28% elapsed=3542s
+17:04:48 state=optimizing progress=28% elapsed=3563s
+17:05:09 state=optimizing progress=28% elapsed=3584s
+17:05:30 state=optimizing progress=28% elapsed=3605s
+17:05:51 state=optimizing progress=28% elapsed=3626s
+17:06:12 state=optimizing progress=31% elapsed=3647s
+17:06:33 state=optimizing progress=31% elapsed=3668s
+17:06:54 state=optimizing progress=31% elapsed=3689s
+17:07:15 state=optimizing progress=31% elapsed=3710s
+17:07:36 state=optimizing progress=31% elapsed=3731s
+17:07:57 state=optimizing progress=31% elapsed=3752s
+17:08:17 state=optimizing progress=31% elapsed=3772s
+17:08:39 state=optimizing progress=31% elapsed=3794s
+17:08:59 state=optimizing progress=31% elapsed=3814s
+17:09:20 state=optimizing progress=31% elapsed=3835s
+17:09:41 state=optimizing progress=31% elapsed=3856s
+17:10:02 state=optimizing progress=31% elapsed=3877s
+17:10:23 state=optimizing progress=31% elapsed=3898s
+17:10:44 state=optimizing progress=31% elapsed=3919s
+17:11:05 state=optimizing progress=31% elapsed=3940s
+17:11:26 state=optimizing progress=34% elapsed=3961s
+17:11:47 state=optimizing progress=34% elapsed=3982s
+17:12:08 state=optimizing progress=34% elapsed=4003s
+17:12:29 state=optimizing progress=34% elapsed=4024s
+17:12:50 state=optimizing progress=34% elapsed=4045s
+17:13:11 state=optimizing progress=34% elapsed=4066s
+17:13:32 state=optimizing progress=34% elapsed=4087s
+17:13:53 state=optimizing progress=34% elapsed=4108s
+17:14:14 state=optimizing progress=34% elapsed=4129s
+17:14:35 state=optimizing progress=34% elapsed=4150s
+17:14:56 state=optimizing progress=34% elapsed=4171s
+17:15:17 state=optimizing progress=34% elapsed=4192s
+17:15:38 state=optimizing progress=34% elapsed=4213s
+17:15:59 state=optimizing progress=34% elapsed=4234s
+17:16:20 state=optimizing progress=36% elapsed=4255s
+17:16:41 state=optimizing progress=36% elapsed=4276s
+17:17:02 state=optimizing progress=36% elapsed=4297s
+17:17:23 state=optimizing progress=36% elapsed=4318s
+17:17:44 state=optimizing progress=36% elapsed=4339s
+17:18:05 state=optimizing progress=36% elapsed=4360s
+17:18:26 state=optimizing progress=36% elapsed=4381s
+17:18:47 state=optimizing progress=36% elapsed=4402s
+17:19:08 state=optimizing progress=36% elapsed=4423s
+17:19:29 state=optimizing progress=36% elapsed=4444s
+17:19:50 state=optimizing progress=36% elapsed=4465s
+17:20:11 state=optimizing progress=36% elapsed=4486s
+17:20:32 state=optimizing progress=36% elapsed=4507s
+17:20:53 state=optimizing progress=36% elapsed=4528s
+17:21:14 state=optimizing progress=36% elapsed=4549s
+17:21:35 state=optimizing progress=39% elapsed=4570s
+17:21:56 state=optimizing progress=39% elapsed=4591s
+17:22:17 state=optimizing progress=39% elapsed=4612s
+17:22:37 state=optimizing progress=39% elapsed=4632s
+17:22:58 state=optimizing progress=39% elapsed=4653s
+17:23:19 state=optimizing progress=39% elapsed=4674s
+=== phase-1 launch 2026-09-08T17:23:22Z ===
+== [phase-1-baseline] reset server (headline-pread.env)
+ Container compose-weaviate-1  Stopping
+ Container compose-weaviate-1  Stopped
+ Container compose-weaviate-1  Removing
+ Container compose-weaviate-1  Removed
+ Network compose_default  Removing
+ Network compose_default  Removed
+phase=phase-1-baseline randread_4k_iops=3049 randread_4k_mean_lat_us=82749 seqread_1m_mib_s=129
+date: 2026-09-08T17:27:50Z
+instance: c6in.8xlarge
+kernel: 6.18.44-99.149.amzn2023.x86_64
+data_dev: nvme0n1
+read_ahead_kb: 16
+scheduler: [none] mq-deadline kyber bfq 
+nr_requests: 127
+mount: /dev/nvme0n1 ext4   rw,noatime,nodiratime,seclabel
+swap: 
+cgroup: cgroup2fs controllers=[cpuset cpu io memory hugetlb pids misc]
+docker: 25.0.16 compose=2.29.7
+mem_total_kb: 64772796
+volume: gp3	400	3000	125
+ Network compose_default  Creating
+ Network compose_default  Created
+ Container compose-weaviate-1  Creating
+ Container compose-weaviate-1  Created
+ Container compose-weaviate-1  Starting
+ Container compose-weaviate-1  Started
+container mem_limit=8.0GiB memswap=8.0GiB cpus=24
+{"version":"1.39.3","hostname":"http://[::]:8080"}
+39G	/data/weaviate
+reset done for phase-1-baseline; run a 60 s warm-up from the client before measuring
+== [phase-1-baseline] start host capture
+capture started: /data/results/phase-1-baseline/sweep
+== [phase-1-baseline] sweep from client (this takes ~30 min)
+sweep phase-1-baseline ebs=3000-125 started 2026-09-08T17:28:20Z
+17:28:20 run warmup: --rescoreLimit 350 --efArray 64 -p 32 --queryDuration 60 --labels phase=phase-1-baseline,ebs=3000-125,kind=warmup
+time="2026-09-08T17:46:10Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=3.392428216s ndcg=0.6781524725646837 parallel=32 qps=9.349461297161325 recall=0.5117299999999968 searchProbe=64
+17:46:10 run probe-sweep-p8: --rescoreLimit 350 --efArray 32,64,128,256 -p 8 --queryDuration 120 --labels phase=phase-1-baseline,ebs=3000-125,kind=probe,parallel=8
+
+aws: [ERROR]: Websocket Closure Reason: Connection exceeded session timeout
+Connection to i-062026dfbbc574732 closed by remote host.
+=== compact relaunch 2026-09-08T20:46:00Z ===
+== [phase-1-baseline] arm dead-man's switch (95 min)
+Running timer as unit: ebs-blog-deadman.timer
+Will run service as unit: ebs-blog-deadman.service
+deadman armed: poweroff at 22:21 UTC (95 min)
+== [phase-1-baseline] SKIP_RESET=1: server already reset
+== [phase-1-baseline] start host capture
+capture started: /data/results/phase-1-baseline/sweep
+== [phase-1-baseline] sweep from client
+sweep phase-1-baseline ebs=3000-125 started 2026-09-08T20:46:17Z
+20:46:18 run warmup: --rescoreLimit 350 --efArray 64 -p 32 --queryDuration 60 --labels phase=phase-1-baseline,ebs=3000-125,kind=warmup
+time="2026-09-08T21:03:58Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=3.361365907s ndcg=0.6781524725646837 parallel=32 qps=9.435682407996499 recall=0.5117299999999968 searchProbe=64
+21:03:58 run probe-sweep-p32: --rescoreLimit 350 --efArray 64,256 -p 32 --queryDuration 60 --labels phase=phase-1-baseline,ebs=3000-125,kind=probe,parallel=32
+
+aws: [ERROR]: AWS_IO_SOCKET_CLOSED: socket is closed.
+Connection to i-062026dfbbc574732 closed by remote host.

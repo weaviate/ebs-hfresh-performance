@@ -1,0 +1,15 @@
+12:14:41 pending_bg_ops=4691774 vector_queue=0 writes_per_s=256084.00 idle_min=0 write_quiet_min=0
+12:15:41 pending_bg_ops=3432406 vector_queue=0 writes_per_s=138116.00 idle_min=0 write_quiet_min=0
+12:16:42 pending_bg_ops=1812923 vector_queue=0 writes_per_s=114682.40 idle_min=0 write_quiet_min=0
+12:17:42 pending_bg_ops=71719 vector_queue=0 writes_per_s=46239.20 idle_min=0 write_quiet_min=0
+12:18:42 pending_bg_ops=0 vector_queue=0 writes_per_s=76828.80 idle_min=0 write_quiet_min=0
+12:19:42 pending_bg_ops=0 vector_queue=0 writes_per_s=10512.80 idle_min=1 write_quiet_min=0
+12:20:42 pending_bg_ops=0 vector_queue=0 writes_per_s=124675.20 idle_min=2 write_quiet_min=0
+12:21:42 pending_bg_ops=0 vector_queue=0 writes_per_s=291780.00 idle_min=3 write_quiet_min=0
+12:22:42 pending_bg_ops=0 vector_queue=0 writes_per_s=20.80 idle_min=4 write_quiet_min=0
+12:23:42 pending_bg_ops=0 vector_queue=0 writes_per_s=0.00 idle_min=5 write_quiet_min=0
+12:24:42 pending_bg_ops=0 vector_queue=0 writes_per_s=0.00 idle_min=6 write_quiet_min=1
+12:25:42 pending_bg_ops=0 vector_queue=0 writes_per_s=0.00 idle_min=7 write_quiet_min=2
+12:26:42 pending_bg_ops=0 vector_queue=0 writes_per_s=0.00 idle_min=8 write_quiet_min=3
+12:27:42 pending_bg_ops=0 vector_queue=0 writes_per_s=0.00 idle_min=9 write_quiet_min=4
+idle

@@ -1,0 +1,32 @@
+{
+    "nodes": [
+        {
+            "batchStats": {
+                "ratePerSecond": 0
+            },
+            "gitHash": "e5d5c95",
+            "name": "node1",
+            "operationalMode": "ReadWrite",
+            "shards": [
+                {
+                    "asyncReplicationStatus": [],
+                    "class": "Sphere",
+                    "compressed": true,
+                    "loaded": true,
+                    "name": "U8bj5E1z4AK8",
+                    "numberOfReplicas": 1,
+                    "objectCount": 9990000,
+                    "replicationFactor": 1,
+                    "vectorIndexingStatus": "READY",
+                    "vectorQueueLength": 0
+                }
+            ],
+            "stats": {
+                "objectCount": 9990000,
+                "shardCount": 1
+            },
+            "status": "HEALTHY",
+            "version": "1.39.3"
+        }
+    ]
+}

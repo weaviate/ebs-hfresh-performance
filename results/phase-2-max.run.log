@@ -1,0 +1,79 @@
+== [phase-2-max] reset server (headline-pread.env)
+ Container compose-weaviate-1  Stopping
+ Container compose-weaviate-1  Stopped
+ Container compose-weaviate-1  Removing
+ Container compose-weaviate-1  Removed
+ Network compose_default  Removing
+ Network compose_default  Removed
+phase=phase-2-max randread_4k_iops=81389 randread_4k_mean_lat_us=3110 seqread_1m_mib_s=2100
+date: 2026-09-08T14:22:15Z
+instance: c6in.8xlarge
+kernel: 6.18.44-99.149.amzn2023.x86_64
+data_dev: nvme0n1
+read_ahead_kb: 16
+scheduler: [none] mq-deadline kyber bfq 
+nr_requests: 127
+mount: /dev/nvme0n1 ext4   rw,noatime,nodiratime,seclabel
+swap: 
+cgroup: cgroup2fs controllers=[cpuset cpu io memory hugetlb pids misc]
+docker: 25.0.16 compose=2.29.7
+mem_total_kb: 64772796
+volume: gp3	400	80000	2000
+ Network compose_default  Creating
+ Network compose_default  Created
+ Container compose-weaviate-1  Creating
+ Container compose-weaviate-1  Created
+ Container compose-weaviate-1  Starting
+ Container compose-weaviate-1  Started
+container mem_limit=8.0GiB memswap=8.0GiB cpus=24
+{"version":"1.39.3","hostname":"http://[::]:8080"}
+39G	/data/weaviate
+reset done for phase-2-max; run a 60 s warm-up from the client before measuring
+== [phase-2-max] start host capture
+capture started: /data/results/phase-2-max/sweep
+== [phase-2-max] sweep from client (this takes ~30 min)
+sweep phase-2-max ebs=80000-2000 started 2026-09-08T14:22:44Z
+14:22:44 run warmup: --rescoreLimit 350 --efArray 64 -p 32 --queryDuration 60 --labels phase=phase-2-max,ebs=80000-2000,kind=warmup
+time="2026-09-08T14:24:02Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=121.601983ms ndcg=0.6781524725646838 parallel=32 qps=259.89970891256155 recall=0.5117299999999966 searchProbe=64
+14:24:02 run probe-sweep-p8: --rescoreLimit 350 --efArray 32,64,128,256 -p 8 --queryDuration 120 --labels phase=phase-2-max,ebs=80000-2000,kind=probe,parallel=8
+time="2026-09-08T14:26:26Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=28.491865ms ndcg=0.6625762362823351 parallel=8 qps=279.457932466543 recall=0.4955299999999979 searchProbe=32
+time="2026-09-08T14:28:49Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=37.942438ms ndcg=0.678152472564684 parallel=8 qps=209.49356090297744 recall=0.5117299999999969 searchProbe=64
+time="2026-09-08T14:31:00Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=51.596093ms ndcg=0.697881289798123 parallel=8 qps=153.56205300511573 recall=0.5325099999999966 searchProbe=128
+time="2026-09-08T14:33:53Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=68.695812ms ndcg=0.712360913155393 parallel=8 qps=115.41380000129479 recall=0.5485399999999969 searchProbe=256
+14:33:53 run probe-sweep-p32: --rescoreLimit 350 --efArray 32,64,128,256 -p 32 --queryDuration 120 --labels phase=phase-2-max,ebs=80000-2000,kind=probe,parallel=32
+time="2026-09-08T14:36:20Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=115.21166ms ndcg=0.6625762362823351 parallel=32 qps=275.4981178128155 recall=0.49552999999999814 searchProbe=32
+time="2026-09-08T14:38:54Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=121.539689ms ndcg=0.6781524725646838 parallel=32 qps=260.1056298583767 recall=0.5117299999999969 searchProbe=64
+time="2026-09-08T14:41:00Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=132.406144ms ndcg=0.6978812897981231 parallel=32 qps=238.41124339985444 recall=0.5325099999999965 searchProbe=128
+time="2026-09-08T14:43:19Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=145.130546ms ndcg=0.7123609131553933 parallel=32 qps=215.85501647751943 recall=0.5485399999999971 searchProbe=256
+14:43:19 run probe-sweep-p128: --rescoreLimit 350 --efArray 32,64,128,256 -p 128 --queryDuration 120 --labels phase=phase-2-max,ebs=80000-2000,kind=probe,parallel=128
+time="2026-09-08T14:45:48Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=465.210867ms ndcg=0.6625762362823352 parallel=128 qps=270.50278790368293 recall=0.495529999999998 searchProbe=32
+time="2026-09-08T14:48:27Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=493.742358ms ndcg=0.6781524725646836 parallel=128 qps=253.22897586665965 recall=0.5117299999999972 searchProbe=64
+time="2026-09-08T14:50:43Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=569.764391ms ndcg=0.6978812897981231 parallel=128 qps=219.6543993650994 recall=0.5325099999999969 searchProbe=128
+time="2026-09-08T14:53:33Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=703.932716ms ndcg=0.7123609131553925 parallel=128 qps=177.95759830582386 recall=0.5485399999999973 searchProbe=256
+rescoreLimit now 100
+14:53:33 run rescore-r100-p32: --efArray 64 -p 32 --queryDuration 120 --labels phase=phase-2-max,ebs=80000-2000,kind=rescore,parallel=32,rescore=100
+time="2026-09-08T14:55:43Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=41.316139ms ndcg=0.6710503048367353 parallel=32 qps=760.9814908776757 recall=0.5012499999999962 searchProbe=64
+rescoreLimit now 350
+14:55:44 run rescore-r350-p32: --efArray 64 -p 32 --queryDuration 120 --labels phase=phase-2-max,ebs=80000-2000,kind=rescore,parallel=32,rescore=350
+time="2026-09-08T14:58:19Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=122.942488ms ndcg=0.6781524725646839 parallel=32 qps=257.59507407880153 recall=0.5117299999999969 searchProbe=64
+rescoreLimit now 1000
+14:58:20 run rescore-r1000-p32: --efArray 64 -p 32 --queryDuration 120 --labels phase=phase-2-max,ebs=80000-2000,kind=rescore,parallel=32,rescore=1000
+time="2026-09-08T15:01:46Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=327.85172ms ndcg=0.6796940793930275 parallel=32 qps=96.85805854711134 recall=0.514169999999996 searchProbe=64
+rescoreLimit now 350
+sweep phase-2-max finished 2026-09-08T15:01:47Z
+synced to s3
+== [phase-2-max] stop capture, sync server results
+capture stopped: /data/results/phase-2-max/sweep
+synced
+== [phase-2-max] cloudwatch export 2026-09-08T14:22:39Z .. 2026-09-08T15:01:47Z
+wrote ./scripts/aws/../../results/phase-2-max/cloudwatch-ebs.json (IOPS = readops sum / 60 per minute)
+./results
+./results/import
+./results/phase-0-calibration
+./results/phase-1-baseline
+./results/phase-2-max
+./results/phase-2-max-mmap
+./results/phase-2-max-mmap/sweep
+./results/phase-2-max/sweep
+./results/phase-3-control
+== [phase-2-max] done. Render with: python3 scripts/analyze/render.py

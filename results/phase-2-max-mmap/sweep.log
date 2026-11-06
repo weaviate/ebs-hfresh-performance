@@ -1,0 +1,32 @@
+sweep phase-2-max ebs=80000-2000 started 2026-09-08T13:18:17Z
+13:18:17 run warmup: --rescoreLimit 350 --efArray 64 -p 32 --queryDuration 60 --labels phase=phase-2-max,ebs=80000-2000,kind=warmup
+time="2026-09-08T13:18:17Z" level=info msg="Benchmark configuration" dataset=/datasets/sphere-10M-meta-dpr.hdf5 distance=cosine efC=256 index=hfresh m=16 shards=1
+time="2026-09-08T13:20:21Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=392.372232ms ndcg=0.6781200514835297 parallel=32 qps=80.88126288845817 recall=0.5116899999999968 searchProbe=64
+13:20:21 run probe-sweep-p8: --rescoreLimit 350 --efArray 32,64,128,256 -p 8 --queryDuration 120 --labels phase=phase-2-max,ebs=80000-2000,kind=probe,parallel=8
+time="2026-09-08T13:20:21Z" level=info msg="Benchmark configuration" dataset=/datasets/sphere-10M-meta-dpr.hdf5 distance=cosine efC=256 index=hfresh m=16 shards=1
+time="2026-09-08T13:24:01Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=87.543476ms ndcg=0.6625561306055976 parallel=8 qps=91.00194683045873 recall=0.49551499999999804 searchProbe=32
+time="2026-09-08T13:26:27Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=115.668314ms ndcg=0.6781655195772839 parallel=8 qps=68.61053528807612 recall=0.511729999999997 searchProbe=64
+time="2026-09-08T13:29:48Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=159.167083ms ndcg=0.6978941335862275 parallel=8 qps=49.93944598619496 recall=0.5325199999999967 searchProbe=128
+time="2026-09-08T13:34:13Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=211.080893ms ndcg=0.7123887549112529 parallel=8 qps=37.66925471652755 recall=0.5485499999999972 searchProbe=256
+13:34:13 run probe-sweep-p32: --rescoreLimit 350 --efArray 32,64,128,256 -p 32 --queryDuration 120 --labels phase=phase-2-max,ebs=80000-2000,kind=probe,parallel=32
+time="2026-09-08T13:34:14Z" level=info msg="Benchmark configuration" dataset=/datasets/sphere-10M-meta-dpr.hdf5 distance=cosine efC=256 index=hfresh m=16 shards=1
+time="2026-09-08T13:37:38Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=323.66187ms ndcg=0.6625762362823351 parallel=32 qps=97.86670938029147 recall=0.495529999999998 searchProbe=32
+time="2026-09-08T13:41:37Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=377.157638ms ndcg=0.6781660886058704 parallel=32 qps=83.95290170732538 recall=0.511739999999997 searchProbe=64
+time="2026-09-08T13:44:00Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=453.553707ms ndcg=0.697897547757749 parallel=32 qps=69.84985147383581 recall=0.5325199999999969 searchProbe=128
+time="2026-09-08T13:46:55Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=553.252991ms ndcg=0.7123609131553932 parallel=32 qps=57.099514906752674 recall=0.548539999999997 searchProbe=256
+13:46:55 run probe-sweep-p128: --rescoreLimit 350 --efArray 32,64,128,256 -p 128 --queryDuration 120 --labels phase=phase-2-max,ebs=80000-2000,kind=probe,parallel=128
+time="2026-09-08T13:46:56Z" level=info msg="Benchmark configuration" dataset=/datasets/sphere-10M-meta-dpr.hdf5 distance=cosine efC=256 index=hfresh m=16 shards=1
+time="2026-09-08T13:50:21Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=1.287431174s ndcg=0.6625762362823349 parallel=128 qps=97.55082678597606 recall=0.49552999999999825 searchProbe=32
+time="2026-09-08T13:52:22Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=1.5179359s ndcg=0.6781524725646839 parallel=128 qps=82.5011560347025 recall=0.5117299999999971 searchProbe=64
+time="2026-09-08T13:54:54Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=1.902945291s ndcg=0.6978812897981234 parallel=128 qps=65.87412854457185 recall=0.5325099999999964 searchProbe=128
+time="2026-09-08T13:58:27Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=2.660250338s ndcg=0.712360913155393 parallel=128 qps=47.056726485702136 recall=0.5485399999999971 searchProbe=256
+13:58:27 run rescore-r100-p32: --rescoreLimit 100 --efArray 64 -p 32 --queryDuration 120 --labels phase=phase-2-max,ebs=80000-2000,kind=rescore,parallel=32,rescore=100
+time="2026-09-08T13:58:27Z" level=info msg="Benchmark configuration" dataset=/datasets/sphere-10M-meta-dpr.hdf5 distance=cosine efC=256 index=hfresh m=16 shards=1
+time="2026-09-08T14:02:25Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=376.87314ms ndcg=0.6781524725646838 parallel=32 qps=84.03889371552137 recall=0.5117299999999969 searchProbe=64
+14:02:26 run rescore-r350-p32: --rescoreLimit 350 --efArray 64 -p 32 --queryDuration 120 --labels phase=phase-2-max,ebs=80000-2000,kind=rescore,parallel=32,rescore=350
+time="2026-09-08T14:02:26Z" level=info msg="Benchmark configuration" dataset=/datasets/sphere-10M-meta-dpr.hdf5 distance=cosine efC=256 index=hfresh m=16 shards=1
+time="2026-09-08T14:06:25Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=377.483835ms ndcg=0.6781524725646835 parallel=32 qps=83.85774831911581 recall=0.5117299999999971 searchProbe=64
+14:06:25 run rescore-r1000-p32: --rescoreLimit 1000 --efArray 64 -p 32 --queryDuration 120 --labels phase=phase-2-max,ebs=80000-2000,kind=rescore,parallel=32,rescore=1000
+time="2026-09-08T14:06:25Z" level=info msg="Benchmark configuration" dataset=/datasets/sphere-10M-meta-dpr.hdf5 distance=cosine efC=256 index=hfresh m=16 shards=1
+time="2026-09-08T14:10:24Z" level=info msg="Benchmark result" api=grpc count=10000 failed=0 limit=10 mean=377.543548ms ndcg=0.6781524725646838 parallel=32 qps=83.78555261384176 recall=0.5117299999999971 searchProbe=64
+sweep phase-2-max finished 2026-09-08T14:12:50Z

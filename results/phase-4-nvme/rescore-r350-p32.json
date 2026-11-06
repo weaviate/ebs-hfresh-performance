@@ -1,0 +1,30 @@
+[
+    {
+        "api": "grpc",
+        "dataset_file": "sphere-10M-meta-dpr.hdf5",
+        "ebs": "nvme",
+        "efConstruction": 256,
+        "finalIteration": true,
+        "heap_alloc_bytes": 0,
+        "heap_inuse_bytes": 0,
+        "heap_sys_bytes": 0,
+        "importTime": 0,
+        "iteration": "1",
+        "kind": "rescore",
+        "limit": 10,
+        "maxConnections": 16,
+        "meanLatency": 0.056674965,
+        "ndcg": 0.6770450887413549,
+        "p99Latency": 0.092117757,
+        "parallel": "32",
+        "parallelization": 32,
+        "phase": "phase-4-nvme",
+        "qps": 558.7689677815385,
+        "recall": 0.5097299999999991,
+        "rescore": "350",
+        "run_id": "1788959069",
+        "searchProbe": 64,
+        "shards": 1,
+        "timestamp": "2026-09-09T13:06:35Z"
+    }
+]
